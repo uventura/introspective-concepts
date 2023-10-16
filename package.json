@@ -1,0 +1,26 @@
+{
+  "name": "introspective-concepts",
+  "version": "1.0.0",
+  "description": "Some examples of Introspective Architecture",
+  "main": "instrospective02.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uventura/introspective-concepts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uventura/introspective-concepts/issues"
+  },
+  "homepage": "https://github.com/uventura/introspective-concepts#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

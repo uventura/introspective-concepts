@@ -3,11 +3,11 @@ const path = require('path');
 const process = require('process');
 
 // Palavras que não serão consideradas
-function readStopWords()
+function readStopWords(ignoreContext = false)
 {
   // Você precisa conhecer sobre o nome da função que chama
   // para permitir que esta possa ser chamada
-  if(readStopWords.caller.name != "extractWords")
+  if(!ignoreContext && readStopWords.caller.name != "extractWords")
   {
     return false; 
   }
@@ -73,6 +73,15 @@ function main() {
   }
 }
 
+module.exports = {
+  readStopWords,
+  extractWords,
+  frequencies,
+  sort
+}
+
 // Exemplo:
 //    node introspective01.js examples/01.txt
-main();
+if (require.main === module) {
+  main();
+}
