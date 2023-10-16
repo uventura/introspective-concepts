@@ -14,7 +14,7 @@ describe("Instrospection01 TestCases", () => {
   expect(intros01.readStopWords(true)).toStrictEqual(expectedValue)
   })
 
-  test("Extract Words Functionality", () => {
+  test("Extract Words Functionality Composed", () => {
     expectedValue = [
         "este",
         "exemplo",
@@ -34,7 +34,7 @@ describe("Instrospection01 TestCases", () => {
       expect(intros01.extractWords(wordsPath)).toStrictEqual(expectedValue)
   })
 
-  test("Frequencies Functionality", () => {
+  test("Frequencies Functionality Composed", () => {
     const extractedWords = intros01.extractWords(wordsPath)
     
     result = intros01.frequencies(extractedWords)
@@ -43,7 +43,14 @@ describe("Instrospection01 TestCases", () => {
     expect(result).toStrictEqual(expected)
   })
 
-  test("Sort Frequencies Functionality", () => {
+  test("Frequencies Functionality", () => {
+    const inputWords = ["ola", "ola", "tchau"]
+    result = intros01.frequencies(inputWords)
+    expected = {"ola":2, "tchau":1}
+    expect(result).toStrictEqual(expected)
+  })
+
+  test("Sort Frequencies Functionality Composed", () => {
     const extractedWords = intros01.extractWords(wordsPath)
     const frequencies = intros01.frequencies(extractedWords)
 
@@ -61,6 +68,15 @@ describe("Instrospection01 TestCases", () => {
       ["serve", 1],
       ["como", 1]]
 
+    expect(result).toStrictEqual(expected)
+  })
+
+  test("Sort Functionality Lonely", () => {
+    frequenciesInput = {"a": 1, "ola": 5, "credo": 0}
+    expected = [["ola", 5], ["a", 1], ["credo", 0]]
+
+    result = intros01.sort(frequenciesInput)
+    console.log(result)
     expect(result).toStrictEqual(expected)
   })
 });
